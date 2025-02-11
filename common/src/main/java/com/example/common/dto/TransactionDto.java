@@ -1,12 +1,14 @@
 package com.example.common.dto;
 
 import com.example.common.enumeration.Country;
+import java.math.BigDecimal;
+import java.time.Instant;
 
 public record TransactionDto(
-    String tranId,
+    String transactionId,
     String userId,
-    double amount,
-    long timestamp,
+    BigDecimal amount,
+    Instant timestamp,
     Country country,
-    double latCoord,
-    double longCoord) {}
+    double latitudeCoordinate,
+    double longitudeCoordinate) {}
