@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/transaction-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/transaction-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>

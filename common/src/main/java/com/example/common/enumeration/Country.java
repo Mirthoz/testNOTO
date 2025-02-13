@@ -197,15 +197,15 @@ public enum Country {
   ZIMBABWE("Zimbabwe");
 
   private final String name;
-  private final boolean isActive;
+  private final boolean isBlacklisted;
 
   Country(String name) {
     this(name, false);
   }
 
-  Country(String name, boolean isActive) {
+  Country(String name, boolean isBlacklisted) {
     this.name = name;
-    this.isActive = isActive;
+    this.isBlacklisted = isBlacklisted;
   }
 
   public String getName() {
@@ -213,6 +213,6 @@ public enum Country {
   }
 
   public boolean isActive() {
-    return isActive;
+    return isBlacklisted;
   }
 }

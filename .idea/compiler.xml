@@ -11,10 +11,17 @@
         <module name="transaction-producer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common (1)" target="17" />
+      <module name="common (2)" target="17" />
+      <module name="testNOTO" target="17" />
+      <module name="transaction-parent" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="-parameters" />
+      <module name="common (2)" options="-parameters" />
       <module name="transaction-consumer" options="-parameters" />
       <module name="transaction-producer" options="-parameters" />
     </option>
