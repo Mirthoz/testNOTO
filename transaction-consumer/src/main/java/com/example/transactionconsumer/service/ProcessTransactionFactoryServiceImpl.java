@@ -6,6 +6,8 @@ import com.example.transactionconsumer.repository.FraudTransactionRepository;
 import com.example.transactionconsumer.repository.TransactionRepository;
 import com.example.transactionconsumer.service.contract.ProcessTransactionFactoryService;
 import com.example.transactionconsumer.service.contract.TransactionVerificationService;
+import com.example.transactionconsumer.util.mapper.FraudTransactionMapper;
+import com.example.transactionconsumer.util.mapper.TransactionMapper;
 import java.time.Instant;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -59,8 +61,12 @@ public class ProcessTransactionFactoryServiceImpl implements ProcessTransactionF
           transactionDto, userTransactionsLast1Minute
       );
 
-    } catch (RuntimeException e){
+      transactionRepository.save(TransactionMapper.TransactionDtoToTransaction(transactionDto));
 
+    } catch (RuntimeException e){
+      fraudTransactionRepository.save(
+          FraudTransactionMapper.TransactionDtoToFraudTransaction(transactionDto, e.getMessage())
+      );
     }
   }
 }

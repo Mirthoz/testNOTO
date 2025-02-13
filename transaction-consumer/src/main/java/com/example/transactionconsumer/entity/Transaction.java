@@ -28,6 +28,17 @@ public class Transaction {
     this.longitudeCoordinate = longitudeCoordinate;
   }
 
+  public Transaction(double latitudeCoordinate, double longitudeCoordinate, Instant timestamp) {
+    this.timestamp = timestamp;
+    this.latitudeCoordinate = latitudeCoordinate;
+    this.longitudeCoordinate = longitudeCoordinate;
+  }
+
+  public Transaction(Country country, Instant timestamp) {
+    this.timestamp = timestamp;
+    this.country = country;
+  }
+
   @Id
   private String id;
 

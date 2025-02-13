@@ -212,7 +212,7 @@ public enum Country {
     return name;
   }
 
-  public boolean isActive() {
+  public boolean isBlacklisted() {
     return isBlacklisted;
   }
 }
