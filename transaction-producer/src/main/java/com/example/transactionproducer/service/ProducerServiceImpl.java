@@ -9,13 +9,17 @@ import java.time.Instant;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class ProducerServiceImpl implements ProducerService {
 
   private final RestTemplate restTemplate;
+  private static final Logger logger = LoggerFactory.getLogger(ProducerServiceImpl.class);
 
   @Value("${transaction.consumer.endpoint}")
   private String consumerUrl;
@@ -43,6 +47,11 @@ public class ProducerServiceImpl implements ProducerService {
         longitudeCoordinate
     );
 
-    restTemplate.postForObject(consumerUrl, transactionDto, String.class);
+    try {
+      ResponseEntity<String> response = restTemplate.postForEntity(consumerUrl, transactionDto, String.class);
+      logger.info("Transaction sent successfully. Response: Status={}, Body={}", response.getStatusCode(), response.getBody());
+    } catch (Exception e) {
+      logger.error("Failed to send transaction: {}", e.getMessage());
+    }
   }
 }

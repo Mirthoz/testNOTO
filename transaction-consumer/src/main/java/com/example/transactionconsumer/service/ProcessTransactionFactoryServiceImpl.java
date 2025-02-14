@@ -1,6 +1,8 @@
 package com.example.transactionconsumer.service;
 
 import com.example.common.dto.TransactionDto;
+import com.example.common.exception.BlacklistedCountryTransactionException;
+import com.example.common.exception.FraudulentTransactionException;
 import com.example.transactionconsumer.entity.Transaction;
 import com.example.transactionconsumer.repository.FraudTransactionRepository;
 import com.example.transactionconsumer.repository.TransactionRepository;
@@ -63,10 +65,10 @@ public class ProcessTransactionFactoryServiceImpl implements ProcessTransactionF
 
       transactionRepository.save(TransactionMapper.TransactionDtoToTransaction(transactionDto));
 
-    } catch (RuntimeException e){
+    } catch (Exception e){
       fraudTransactionRepository.save(
-          FraudTransactionMapper.TransactionDtoToFraudTransaction(transactionDto, e.getMessage())
-      );
+          FraudTransactionMapper.TransactionDtoToFraudTransaction(transactionDto, e.getMessage()));
+      throw new FraudulentTransactionException(e.getMessage());
     }
   }
 }

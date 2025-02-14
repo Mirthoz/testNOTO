@@ -1,6 +1,7 @@
 package com.example.transactionconsumer.controller;
 
 import com.example.common.dto.TransactionDto;
+import com.example.common.exception.FraudulentTransactionException;
 import com.example.transactionconsumer.service.contract.ProcessTransactionFactoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +29,9 @@ public class ConsumerController {
       processTransactionFactoryService.processTransactionFactory(transactionDto);
       logger.info("Transaction successfully processed for user: {}", transactionDto.userId());
       return ResponseEntity.ok("Transaction processed successfully");
-    } catch (RuntimeException e) {
-      logger.error("Error processing transaction for user: {}", transactionDto.userId(), e);
-      return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
+    } catch (FraudulentTransactionException e) {
+      logger.error("Error processing transaction for user: {}, {}", transactionDto.userId(), e.getMessage());
+      return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
           .body("Error processing transaction: " + e.getMessage());
     }
   }
