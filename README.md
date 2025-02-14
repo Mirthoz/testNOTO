@@ -75,6 +75,3 @@ docker-compose down
 - The **transaction-consumer** checks for fraud conditions and saves valid transactions to MongoDB.
 
 ---
-
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
