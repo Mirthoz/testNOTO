@@ -21,8 +21,7 @@ public class ProducerServiceImpl implements ProducerService {
   private final RestTemplate restTemplate;
   private static final Logger logger = LoggerFactory.getLogger(ProducerServiceImpl.class);
 
-  @Value("${transaction.consumer.endpoint}")
-  private String consumerUrl;
+  private String consumerUrl = "http://localhost:8082/transactions/transaction";
 
   public ProducerServiceImpl(RestTemplate restTemplate) {
     this.restTemplate = restTemplate;

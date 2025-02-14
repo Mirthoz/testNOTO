@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY target/transaction-producer.jar /app/transaction-producer.jar
 EXPOSE 8081

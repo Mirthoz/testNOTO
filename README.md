@@ -24,8 +24,7 @@ You can download and install Docker from: [https://www.docker.com/get-started](h
 Clone the repository to your local machine:
 
 ```bash
-git clone <repo-url>
-cd <repo-folder>
+git clone <https://github.com/Mirthoz/testNOTO.git>
 ```
 
 ### 3️⃣ Build and Run the Services with Docker Compose
@@ -48,7 +47,7 @@ Once the containers are running, you can access them at:
 The **transaction-consumer** microservice is configured to connect to a remote MongoDB cluster. The connection URI is specified in the `docker-compose.yml`:
 
 ```env
-SPRING_DATA_MONGODB_URI=mongodb+srv://pavlovmiroslav92:Q9cIj0mveskCPAAT@cluster135.4xns2.mongodb.net
+SPRING_DATA_MONGODB_URI=mongodb+srv://pavlovmiroslav92:Q9cIj0mveskCPAAT@cluster135.4xns2.mongodb.net/Spirit
 ```
 
 If you want to use a different MongoDB cluster or credentials, replace the MongoDB URI in the environment variable with your own connection string.

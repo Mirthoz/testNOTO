@@ -1,0 +1,13 @@
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\controller\ConsumerController.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\entity\FraudTransaction.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\entity\Transaction.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\repository\FraudTransactionRepository.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\repository\TransactionRepository.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\service\contract\ProcessTransactionFactoryService.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\service\contract\TransactionVerificationService.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\service\contract\TransactionVerificationServiceImpl.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\service\ProcessTransactionFactoryServiceImpl.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\TransactionConsumerApplication.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\util\GeoUtils.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\util\mapper\FraudTransactionMapper.java
+C:\Users\PavlovMiroslav\Desktop\NOTO\testNOTO\transaction-consumer\src\main\java\com\example\transactionconsumer\util\mapper\TransactionMapper.java
